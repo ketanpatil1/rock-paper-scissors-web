@@ -10,7 +10,7 @@ body {
     display: flex;
     flex-direction: column;
     padding: 40px;
-    background-color: #135CFE;
+    background-color: #c2cde7;
 }
 
 .flex-column {
@@ -29,7 +29,7 @@ body {
 
 .header {
     color: #000000;
-    background-color: #135CFE;
+    background-color: #c2cde7;
     flex: 0 auto;
     padding: 20px;
 }
