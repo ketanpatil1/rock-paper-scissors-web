@@ -44,12 +44,14 @@ body {
     background-color: #E2EFF7;
     flex-basis: 30%;
     flex-direction: column;
+    justify-content: space-evenly;
     padding: 40px;
 }
 
 .player-card,
 .computer-card {
     flex-direction: column;
+    flex-grow: 0;
 }
 
 .player-score,
