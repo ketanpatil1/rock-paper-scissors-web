@@ -54,13 +54,14 @@ body {
     justify-content: space-evenly;
     flex-grow: 0;
     width: 170px;
-    padding: 10px;
+    padding: 5px;
 }
 
 .player-score,
 .computer-score {
     height: 70px;
     flex: 0 auto;
+    background-color: #E2EFF7;
 }
 
 .player-card {
