@@ -1,3 +1,6 @@
+let computerScore = 0;
+let playerScore = 0;
+
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
@@ -14,90 +17,91 @@ function getComputerChoice() {
     }
 }
 
-function getPlayerChoice() {
-    while (true) {
-        playerChoice = String(prompt("Rock, Paper or Scissors?")).toLowerCase();
-        if (playerChoice === "rock"
-            || playerChoice === "paper"
-            || playerChoice === "scissors") {
-            return playerChoice;
-        } else if (playerChoice === "null") {
-            return;
-        } else {
-            alert("Please enter a valid choice.");
+const playerScoreDisplay = document.querySelector(".player-score");
+const computerScoreDisplay = document.querySelector(".computer-score");
+playerScoreDisplay.textContent = playerScore;
+computerScoreDisplay.textContent = computerScore;
+
+const playerChoiceDisplay = document.querySelector(".player-choice-icon");
+const computerChoiceDisplay = document.querySelector(".computer-choice-icon");
+
+const roundResultDisplay = document.querySelector(".round-result");
+
+const options = document.querySelectorAll(".option");
+for (option of options) {
+    option.addEventListener ("click", (e) => {
+        if (playerScore == 5 || computerScore == 5) {
+            playerScore = 0;
+            computerScore = 0;
         }
-    }
-}
+        playerChoice = e.target.id;
+        switch (playRound(playerChoice)) {
+            case -1:
+                computerScore++;
+                break;
+            case 0:
+                break;
+            case 1:
+                playerScore++;
+                break;
+        }
+        
+        playerChoiceDisplay.textContent = e.target.textContent;
+        computerChoiceDisplay.textContent = computerChoice;
+
+        playerScoreDisplay.textContent = playerScore;
+        computerScoreDisplay.textContent = computerScore;
+
+        if (playerScore >= 5) {
+            if (computerScore >= 5) {
+                alert("It's a tie!");
+            } else {
+                alert("You Win!");
+            }
+        } else if (computerScore >= 5) {
+            alert("You Lose!");
+        }
+    });
+};
 
 function getResult(playerChoice, computerChoice) {
     if (playerChoice === computerChoice) {
-        console.log("It's a tie!");
+        roundResultDisplay.textContent = "It's a tie!";
         return 0;
     } else {
         switch (playerChoice) {
             case "rock":
                 switch (computerChoice) {
                     case "paper":
-                        console.log("You Lose! Paper beats Rock!");
+                        roundResultDisplay.textContent = "You Lose! Paper beats Rock!";
                         return -1;
                     case "scissors":
-                        console.log("You Win! Rock beats Scissors!");
+                        roundResultDisplay.textContent = "You Win! Rock beats Scissors!";
                         return 1;
                 }
             case "paper":
                 switch (computerChoice) {
                     case "scissors":
-                        console.log("You Lose! Scissors beat Paper!");
+                        roundResultDisplay.textContent = "You Lose! Scissors beat Paper!";
                         return -1;
                     case "rock":
-                        console.log("You Win! Paper beats Rock!");
+                        roundResultDisplay.textContent = "You Win! Paper beats Rock!";
                         return 1;
                 }
             case "scissors":
                 switch (computerChoice) {
                     case "rock":
-                        console.log("You Lose! Rock beats Scissors!");
+                        roundResultDisplay.textContent = "You Lose! Rock beats Scissors!";
                         return -1;
                     case "paper":
-                        console.log("You Win! Scissors beat Paper!");
+                        roundResultDisplay.textContent = "You Win! Scissors beat Paper!";
                         return 1;
                 }
         }
     }
 }
 
-function playRound() {
-    playerChoice = getPlayerChoice();
+function playRound(playerChoice) {
     computerChoice = getComputerChoice();
     return getResult(playerChoice, computerChoice);
-}
-
-function game() {
-    gamesPlayed = 0;
-    computerScore = 0;
-    playerScore = 0;
-    while (gamesPlayed < 5) {
-        switch (playRound()) {
-            case -1:
-                computerScore++;
-                break;
-            case 0:
-                computerScore += 0.5;
-                playerScore += 0.5;
-                break;
-            case 1:
-                playerScore++;
-                break;
-        }
-        gamesPlayed++;
-    }
-    console.log("Your Score: " + playerScore);
-    console.log("Computer Score: " + computerScore);
-    if (playerScore > computerScore) {
-        console.log("You Win!");
-    } else if (playerScore === computerScore) {
-        console.log("It's a tie!");
-    } else {
-        console.log("You Lose!");
-    }
 }

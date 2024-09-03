@@ -4,10 +4,55 @@
     <head>
         <meta charset="utf-8">
         <title>Rock Paper Scissors</title>
+        <link rel="stylesheet" href="./style.css">
     </head>
 
     <body>
-        <p>Open the browser console(<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>K</kbd>) and enter <code>playRound()</code> to play a round.</p>
+        <div class="main container flex-column">
+            <div class="header container">
+                <h1>Rock, Paper & Scissors!</h1>
+            </div>
+
+            <div class="content container">
+                <div class="container score-area flex-column">
+                    <div class="player-card container flex-column">
+                        <p>Your Score:</p>
+                        <div class="player-score container score"></div>
+                    </div>
+                    <div class="computer-card container flex-column">
+                        <p>Computer's Score:</p>
+                        <div class="computer-score container score"></div>
+                    </div>
+                </div>
+                <div class="container game-area flex-column">
+                    <div class="round-container container flex-column">
+                        <div class="round-display container">
+                            <div class="player-choice container flex-column">
+                                <div class="container">You</div>
+                                <div class="player-choice-icon container"></div>
+                            </div>
+                            <div class="computer-choice container flex-column">
+                                <div class="container">Computer</div>
+                                <div class="computer-choice-icon container"></div>
+                            </div>
+                        </div>
+                        <div class="round-result container"></div>
+                    </div>
+                    <div class="options-container container">
+                        <div id="rock" class="option container">
+                            Rock
+                        </div>
+                        <div id="paper" class="option container">
+                            Paper
+                        </div>
+                        <div id="scissors" class="option container">
+                            Scissors
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <script src="game.js"></script>
     </body>
 </html>

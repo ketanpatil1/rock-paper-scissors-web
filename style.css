@@ -1,0 +1,113 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    background-color: #135CFE;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex: 1 auto;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 20px;
+}
+
+.header {
+    color: #000000;
+    background-color: #135CFE;
+    flex: 0 auto;
+    padding: 20px;
+}
+
+.content {
+    flex-direction: row-reverse;
+    align-items: stretch;
+    /* flex-wrap: wrap; */
+}
+
+.score-area {
+    background-color: #E2EFF7;
+    flex-basis: 30%;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.player-card,
+.computer-card {
+    flex-direction: column;
+}
+
+.player-score,
+.computer-score {
+    width: 200px;
+    height: 100px;
+    flex: 0 auto;
+}
+
+.player-score {
+    background-color: lightgreen;
+}
+
+.computer-score {
+    background-color: orange;
+}
+
+.game-area {
+    flex-basis: 70%;
+    flex-direction: column;
+}
+
+.round-container {
+    background-color: #E2EFF7;
+    flex-grow: 3;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.round-display {
+    flex-grow: 2;
+    align-items: stretch;
+}
+
+.player-choice,
+.computer-choice {
+    gap: 0;
+}
+
+.player-choice-icon,
+.computer-choice-icon {
+    flex-grow: 4;
+}
+
+.round-result {
+    flex-grow: 1;
+}
+
+.options-container {
+    flex-direction: row;
+    align-items: stretch;
+    flex-grow: 1;
+}
+
+.option {
+    background-color: #E2EFF7;
+}
+
+.option-icon {
+    font-size: 30px;
+}
