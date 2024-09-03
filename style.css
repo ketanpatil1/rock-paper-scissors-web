@@ -68,11 +68,11 @@ body {
 }
 
 .player-card {
-    background-color: lightgreen;
+    background-color: #55bbff;
 }
 
 .computer-card {
-    background-color: orange;
+    background-color: #ff4433;
 }
 
 .game-area {
