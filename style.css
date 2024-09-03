@@ -59,11 +59,11 @@ body {
     flex: 0 auto;
 }
 
-.player-score {
+.player-card {
     background-color: lightgreen;
 }
 
-.computer-score {
+.computer-card {
     background-color: orange;
 }
 
