@@ -46,8 +46,10 @@ for (option of options) {
                 break;
         }
 
-        playerChoiceDisplay.textContent = playerChoice;
-        computerChoiceDisplay.textContent = computerChoice;
+        playerChoiceDisplay.src = `./images/${playerChoice}.jpg`;
+        playerChoiceDisplay.alt = `Player chose ${playerChoice}`;
+        computerChoiceDisplay.src = `./images/${computerChoice}.jpg`;
+        computerChoiceDisplay.alt = `Computer chose ${computerChoice}`;
 
         playerScoreDisplay.textContent = playerScore;
         computerScoreDisplay.textContent = computerScore;
