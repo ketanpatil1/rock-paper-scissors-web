@@ -99,11 +99,6 @@ body {
     gap: 0;
 }
 
-.player-choice-icon,
-.computer-choice-icon {
-    flex-grow: 4;
-}
-
 .round-result {
     flex-grow: 1;
 }
