@@ -34,7 +34,7 @@ for (option of options) {
             playerScore = 0;
             computerScore = 0;
         }
-        playerChoice = e.target.id;
+        playerChoice = e.target.parentElement.id;
         switch (playRound(playerChoice)) {
             case -1:
                 computerScore++;
@@ -46,7 +46,7 @@ for (option of options) {
                 break;
         }
         
-        playerChoiceDisplay.textContent = e.target.textContent;
+        playerChoiceDisplay.textContent = playerChoice;
         computerChoiceDisplay.textContent = computerChoice;
 
         playerScoreDisplay.textContent = playerScore;
