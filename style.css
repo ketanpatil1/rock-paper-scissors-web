@@ -94,6 +94,13 @@ body {
     align-items: stretch;
 }
 
+.player-label,
+.computer-label {
+    flex-grow: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
 .player-choice,
 .computer-choice {
     gap: 0;
