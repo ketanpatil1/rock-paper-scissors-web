@@ -9,7 +9,7 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    padding: 40px;
+    padding: 0 40px 20px;
     background-color: #c2cde7;
 }
 
