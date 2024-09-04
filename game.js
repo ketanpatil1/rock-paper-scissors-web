@@ -45,7 +45,7 @@ for (option of options) {
                 playerScore++;
                 break;
         }
-        
+
         playerChoiceDisplay.textContent = playerChoice;
         computerChoiceDisplay.textContent = computerChoice;
 
