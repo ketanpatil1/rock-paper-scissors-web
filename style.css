@@ -109,6 +109,8 @@ body {
 
 .round-result {
     flex-grow: 1;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .options-container {
