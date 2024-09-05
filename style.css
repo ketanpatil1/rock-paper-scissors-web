@@ -112,6 +112,12 @@ body {
     font-size: 24px;
     font-weight: bold;
 }
+.round-result.success {
+    color: #529452;
+}
+.round-result.failure {
+    color: #ff4433;
+}
 
 .options-container {
     flex-direction: row;

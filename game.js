@@ -72,6 +72,7 @@ for (option of options) {
 function getResult(playerChoice, computerChoice) {
     if (playerChoice === computerChoice) {
         roundResultDisplay.textContent = "It's a tie!";
+        roundResultDisplay.classList.remove("failure", "success");
         return 0;
     } else {
         switch (playerChoice) {
@@ -79,27 +80,39 @@ function getResult(playerChoice, computerChoice) {
                 switch (computerChoice) {
                     case "paper":
                         roundResultDisplay.textContent = "You Lose! Paper beats Rock!";
+                        roundResultDisplay.classList.remove("success");
+                        roundResultDisplay.classList.add("failure");
                         return -1;
                     case "scissors":
                         roundResultDisplay.textContent = "You Win! Rock beats Scissors!";
+                        roundResultDisplay.classList.remove("failure");
+                        roundResultDisplay.classList.add("success");
                         return 1;
                 }
             case "paper":
                 switch (computerChoice) {
                     case "scissors":
                         roundResultDisplay.textContent = "You Lose! Scissors beat Paper!";
+                        roundResultDisplay.classList.remove("success");
+                        roundResultDisplay.classList.add("failure");
                         return -1;
                     case "rock":
                         roundResultDisplay.textContent = "You Win! Paper beats Rock!";
+                        roundResultDisplay.classList.remove("failure");
+                        roundResultDisplay.classList.add("success");
                         return 1;
                 }
             case "scissors":
                 switch (computerChoice) {
                     case "rock":
                         roundResultDisplay.textContent = "You Lose! Rock beats Scissors!";
+                        roundResultDisplay.classList.remove("success");
+                        roundResultDisplay.classList.add("failure");
                         return -1;
                     case "paper":
                         roundResultDisplay.textContent = "You Win! Scissors beat Paper!";
+                        roundResultDisplay.classList.remove("failure");
+                        roundResultDisplay.classList.add("success");
                         return 1;
                 }
         }
@@ -119,4 +132,6 @@ function newGame() {
     playerChoiceDisplay.alt = 'No choice made yet';
     computerChoiceDisplay.src = './images/default.jpg';
     computerChoiceDisplay.alt = 'No choice made yet';
+
+    roundResultDisplay.classList.remove("failure", "success");
 }
