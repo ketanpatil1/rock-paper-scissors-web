@@ -67,6 +67,7 @@ body {
     background-color: #E2EFF7;
     font-weight: normal;
     font-size: 24px;
+    border-radius: 15px;
 }
 
 .player-card {
