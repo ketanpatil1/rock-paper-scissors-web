@@ -57,11 +57,14 @@ for (option of options) {
         if (playerScore >= 5) {
             if (computerScore >= 5) {
                 alert("It's a tie!");
+                newGame();
             } else {
                 alert("You Win!");
+                newGame();
             }
         } else if (computerScore >= 5) {
             alert("You Lose!");
+            newGame();
         }
     });
 };
@@ -106,4 +109,14 @@ function getResult(playerChoice, computerChoice) {
 function playRound(playerChoice) {
     computerChoice = getComputerChoice();
     return getResult(playerChoice, computerChoice);
+}
+
+function newGame() {
+    roundResultDisplay.textContent = "New Game Started!";
+    playerScoreDisplay.textContent = 0;
+    computerScoreDisplay.textContent = 0;
+    playerChoiceDisplay.src = './images/default.jpg';
+    playerChoiceDisplay.alt = 'No choice made yet';
+    computerChoiceDisplay.src = './images/default.jpg';
+    computerChoiceDisplay.alt = 'No choice made yet';
 }
