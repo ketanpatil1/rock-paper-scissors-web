@@ -104,6 +104,7 @@ body {
 .player-choice,
 .computer-choice {
     gap: 0;
+    justify-content: space-around;
 }
 
 .round-result {
