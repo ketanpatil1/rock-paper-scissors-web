@@ -6,112 +6,77 @@
 }
 
 body {
-    height: 100vh;
+    margin: auto;
+    padding: 16px;
+    height: 100svh;
+    max-width: 800px;
     display: flex;
     flex-direction: column;
-    padding: 0 40px 20px;
-    background-color: #c2cde7;
+    gap: 16px;
 }
 
-.flex-column {
-    flex-direction: column;
+header {
+    margin-bottom: 48px;
 }
-
-.container {
-    width: 100%;
-    display: flex;
-    flex: 1 auto;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    border-radius: 20px;
-}
-
-.header {
-    color: #000000;
-    background-color: #c2cde7;
-    flex: 0 auto;
-    padding: 20px;
-}
-
-.content {
-    flex-direction: row-reverse;
-    align-items: stretch;
-    /* flex-wrap: wrap; */
+h1 {
+    text-align: center;
+    font-size: 28px;
 }
 
 .score-area {
-    background-color: #E2EFF7;
-    flex-basis: 30%;
-    flex-direction: column;
-    justify-content: space-evenly;
-    padding: 40px;
+    display: flex;
+    justify-content: space-around;
 }
 
 .player-card,
-.computer-card {
-    flex-direction: column;
-    justify-content: space-around;
-    flex-grow: 0;
-    width: 150px;
-    padding: 5px;
-    gap: 5px;
+.cpu-card {
+    width: 140px;
+    padding: 4px;
+    text-align: center;
+}
+.player-card p,
+.cpu-card p {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 20px
 }
-
 .player-score,
-.computer-score {
-    height: 70px;
-    flex: 0 auto;
-    background-color: #E2EFF7;
-    font-weight: normal;
+.cpu-score {
+    padding: 8px;
     font-size: 24px;
-    border-radius: 15px;
 }
-
 .player-card {
-    background-color: #55bbff;
 }
-
-.computer-card {
-    background-color: #ff4433;
-}
-
-.game-area {
-    flex-basis: 70%;
-    flex-direction: column;
+.cpu-card {
 }
 
 .round-container {
-    background-color: #E2EFF7;
     flex-grow: 3;
+    display: flex;
     flex-direction: column;
-    align-items: stretch;
+    justify-content: center;
+    gap: 16px;
 }
 
 .round-display {
-    flex-grow: 2;
-    align-items: stretch;
-}
-
-.player-label,
-.computer-label {
-    flex-grow: 0;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.player-choice,
-.computer-choice {
-    gap: 0;
+    display: flex;
     justify-content: space-around;
 }
 
-.round-result {
-    flex-grow: 1;
+.player-choice,
+.cpu-choice {
+    width: 45%;
+    text-align: center;
+}
+.player-label,
+.cpu-label {
     font-size: 24px;
     font-weight: bold;
+}
+
+.round-result {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
 }
 .round-result.success {
     color: #529452;
@@ -121,20 +86,17 @@ body {
 }
 
 .options-container {
-    flex-direction: row;
-    align-items: stretch;
-    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
 }
 
 .option {
-    background-color: #E2EFF7;
-}
-
-.option-icon {
-    font-size: 30px;
+    border-radius: 24px;
+    width: 32%;
+    aspect-ratio: 1;
+    overflow: hidden;
 }
 
 img {
-    height: 240px;
-    border-radius: 24px;
+    width: 100%;
 }

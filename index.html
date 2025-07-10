@@ -3,53 +3,50 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Rock Paper Scissors</title>
         <link rel="stylesheet" href="./style.css">
     </head>
 
     <body>
-        <div class="main container flex-column">
-            <div class="header container">
-                <h1>Rock, Paper & Scissors!</h1>
-            </div>
+        <header>
+            <h1>Rock, Paper & Scissors!</h1>
+        </header>
 
-            <div class="content container">
-                <div class="container score-area flex-column">
-                    <div class="player-card container flex-column">
-                        <p>You</p>
-                        <div class="player-score container score"></div>
-                    </div>
-                    <div class="computer-card container flex-column">
-                        <p>Computer</p>
-                        <div class="computer-score container score"></div>
-                    </div>
+        <div class="score-area">
+            <div class="player-card">
+                <p>You</p>
+                <div class="player-score score"></div>
+            </div>
+            <div class="cpu-card">
+                <p>CPU</p>
+                <div class="cpu-score score"></div>
+            </div>
+        </div>
+
+        <div class="round-container">
+            <div class="round-display">
+                <div class="player-choice">
+                    <p class="player-label">You</p>
+                    <img class="player-choice-icon" src="./images/default.jpg" alt="No choice made yet">
                 </div>
-                <div class="container game-area flex-column">
-                    <div class="round-container container flex-column">
-                        <div class="round-display container">
-                            <div class="player-choice container flex-column">
-                                <div class="player-label container">You</div>
-                                <img class="player-choice-icon" src="./images/default.jpg" alt="No choice made yet">
-                            </div>
-                            <div class="computer-choice container flex-column">
-                                <div class="computer-label container">Computer</div>
-                                <img class="computer-choice-icon" src="./images/default.jpg" alt="No choice made yet">
-                            </div>
-                        </div>
-                        <div class="round-result container">New Game Started</div>
-                    </div>
-                    <div class="options-container container">
-                        <div id="rock" class="option container">
-                            <img src="./images/rock.jpg" alt="rock">
-                        </div>
-                        <div id="paper" class="option container">
-                            <img src="./images/paper.jpg" alt="paper">
-                        </div>
-                        <div id="scissors" class="option container">
-                            <img src="./images/scissors.jpg" alt="scissors">
-                        </div>
-                    </div>
+                <div class="cpu-choice">
+                    <p class="cpu-label">CPU</p>
+                    <img class="cpu-choice-icon" src="./images/default.jpg" alt="No choice made yet">
                 </div>
+            </div>
+            <div class="round-result">New Game Started</div>
+        </div>
+
+        <div class="options-container">
+            <div id="rock" class="option">
+                <img src="./images/rock.jpg" alt="rock">
+            </div>
+            <div id="paper" class="option">
+                <img src="./images/paper.jpg" alt="paper">
+            </div>
+            <div id="scissors" class="option">
+                <img src="./images/scissors.jpg" alt="scissors">
             </div>
         </div>
 
