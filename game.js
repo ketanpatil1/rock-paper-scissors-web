@@ -1,6 +1,18 @@
 let cpuScore = 0;
 let playerScore = 0;
 
+const dialog = document.querySelector('dialog');
+dialog.showModal();
+dialog.addEventListener("click", (e) => {
+    if (e.target === dialog) {
+        dialog.close();
+    }
+});
+const closeModalButton = document.querySelector('dialog button');
+closeModalButton.addEventListener("click", () => {
+    dialog.close();
+});
+
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
@@ -70,21 +82,23 @@ for (let option of options) {
 };
 
 document.addEventListener("keypress", (e) => {
-    switch (e.key) {
-        case "1":
-        case "r":
-            options[0].click()
-            break;
-        case "2":
-        case "p":
-            options[1].click()
-            break;
-        case "3":
-        case "s":
-            options[2].click()
-            break;
-        default:
-            break;
+    if (!dialog.open) {
+        switch (e.key) {
+            case "1":
+            case "r":
+                options[0].click()
+                break;
+            case "2":
+            case "p":
+                options[1].click()
+                break;
+            case "3":
+            case "s":
+                options[2].click()
+                break;
+            default:
+                break;
+        }
     }
 });
 

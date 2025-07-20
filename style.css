@@ -104,7 +104,47 @@ h1 {
     cursor: pointer;
 }
 
-img {
+.round-display img,
+.option img {
     width: 100%;
     padding: 30%;
+}
+
+dialog {
+    margin: auto;
+    font-size: 18px;
+}
+dialog button {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: block;
+}
+dialog button img {
+    height: 20px;
+    padding: 0;
+}
+
+dialog section {
+    padding: 24px 48px;
+}
+
+h2 {
+    margin-top: 16px;
+}
+dialog li {
+    list-style-position: inside;
+    line-height: 2;
+}
+dialog img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+dialog div {
+    margin-top: 24px;
+    text-align: center;
 }
