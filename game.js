@@ -28,13 +28,13 @@ const cpuChoiceDisplay = document.querySelector(".cpu-choice-icon");
 const roundResultDisplay = document.querySelector(".round-result");
 
 const options = document.querySelectorAll(".option");
-for (option of options) {
+for (let option of options) {
     option.addEventListener ("click", (e) => {
         if (playerScore == 5 || cpuScore == 5) {
             playerScore = 0;
             cpuScore = 0;
         }
-        playerChoice = e.target.parentElement.id;
+        playerChoice = option.id;
         switch (playRound(playerChoice)) {
             case -1:
                 cpuScore++;
@@ -68,6 +68,25 @@ for (option of options) {
         }
     });
 };
+
+document.addEventListener("keypress", (e) => {
+    switch (e.key) {
+        case "1":
+        case "r":
+            options[0].click()
+            break;
+        case "2":
+        case "p":
+            options[1].click()
+            break;
+        case "3":
+        case "s":
+            options[2].click()
+            break;
+        default:
+            break;
+    }
+});
 
 function getResult(playerChoice, cpuChoice) {
     if (playerChoice === cpuChoice) {
