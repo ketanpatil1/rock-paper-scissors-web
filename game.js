@@ -46,9 +46,9 @@ for (option of options) {
                 break;
         }
 
-        playerChoiceDisplay.src = `./images/${playerChoice}.jpg`;
+        playerChoiceDisplay.src = `./assets/${playerChoice}.svg`;
         playerChoiceDisplay.alt = `Player chose ${playerChoice}`;
-        cpuChoiceDisplay.src = `./images/${cpuChoice}.jpg`;
+        cpuChoiceDisplay.src = `./assets/${cpuChoice}.svg`;
         cpuChoiceDisplay.alt = `CPU chose ${cpuChoice}`;
 
         playerScoreDisplay.textContent = playerScore;
@@ -128,9 +128,9 @@ function newGame() {
     roundResultDisplay.textContent = "New Game Started!";
     playerScoreDisplay.textContent = 0;
     cpuScoreDisplay.textContent = 0;
-    playerChoiceDisplay.src = './images/default.jpg';
+    playerChoiceDisplay.src = './assets/default.svg';
     playerChoiceDisplay.alt = 'No choice made yet';
-    cpuChoiceDisplay.src = './images/default.jpg';
+    cpuChoiceDisplay.src = './assets/default.svg';
     cpuChoiceDisplay.alt = 'No choice made yet';
 
     roundResultDisplay.classList.remove("failure", "success");

@@ -95,8 +95,16 @@ h1 {
     width: 32%;
     aspect-ratio: 1;
     overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 64px;
+
+    cursor: pointer;
 }
 
 img {
     width: 100%;
+    padding: 30%;
 }
