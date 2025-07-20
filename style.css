@@ -17,10 +17,25 @@ body {
 
 header {
     margin-bottom: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 h1 {
     text-align: center;
     font-size: 28px;
+    flex-grow: 1;
+}
+.spacer,
+.help-btn {
+    aspect-ratio: 1;
+    height: 32px;
+}
+.help-btn {
+    background-color: transparent;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    font-size: 18px;
 }
 
 .score-area {

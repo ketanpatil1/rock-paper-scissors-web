@@ -12,6 +12,11 @@ const closeModalButton = document.querySelector('dialog button');
 closeModalButton.addEventListener("click", () => {
     dialog.close();
 });
+const helpBtn = document.querySelector('.help-btn');
+helpBtn.addEventListener("click", () => {
+    dialog.showModal();
+});
+
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
