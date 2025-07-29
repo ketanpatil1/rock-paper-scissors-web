@@ -43,6 +43,10 @@ const playerChoiceDisplay = document.querySelector(".player-choice-icon");
 const cpuChoiceDisplay = document.querySelector(".cpu-choice-icon");
 
 const roundResultDisplay = document.querySelector(".round-result");
+const roundResult = document.createElement("p");
+const roundResultReason = document.createElement("p");
+roundResultDisplay.append(roundResult);
+roundResultDisplay.append(roundResultReason);
 
 const options = document.querySelectorAll(".option");
 for (let option of options) {
@@ -109,7 +113,8 @@ document.addEventListener("keypress", (e) => {
 
 function getResult(playerChoice, cpuChoice) {
     if (playerChoice === cpuChoice) {
-        roundResultDisplay.textContent = "It's a tie!";
+        roundResult.textContent = "It's a tie!";
+        roundResultReason.textContent = "";
         roundResultDisplay.classList.remove("failure", "success");
         return 0;
     } else {
@@ -117,12 +122,14 @@ function getResult(playerChoice, cpuChoice) {
             case "rock":
                 switch (cpuChoice) {
                     case "paper":
-                        roundResultDisplay.textContent = "You Lose! Paper beats Rock!";
+                        roundResult.textContent = "You Lose!";
+                        roundResultReason.textContent = "Paper beats Rock!";
                         roundResultDisplay.classList.remove("success");
                         roundResultDisplay.classList.add("failure");
                         return -1;
                     case "scissors":
-                        roundResultDisplay.textContent = "You Win! Rock beats Scissors!";
+                        roundResult.textContent = "You Win!";
+                        roundResultReason.textContent = "Rock beats Scissors!";
                         roundResultDisplay.classList.remove("failure");
                         roundResultDisplay.classList.add("success");
                         return 1;
@@ -130,12 +137,14 @@ function getResult(playerChoice, cpuChoice) {
             case "paper":
                 switch (cpuChoice) {
                     case "scissors":
-                        roundResultDisplay.textContent = "You Lose! Scissors beat Paper!";
+                        roundResult.textContent = "You Lose!";
+                        roundResultReason.textContent = "Scissors beat Paper!";
                         roundResultDisplay.classList.remove("success");
                         roundResultDisplay.classList.add("failure");
                         return -1;
                     case "rock":
-                        roundResultDisplay.textContent = "You Win! Paper beats Rock!";
+                        roundResult.textContent = "You Win!";
+                        roundResultReason.textContent = "Paper beats Rock!";
                         roundResultDisplay.classList.remove("failure");
                         roundResultDisplay.classList.add("success");
                         return 1;
@@ -143,12 +152,14 @@ function getResult(playerChoice, cpuChoice) {
             case "scissors":
                 switch (cpuChoice) {
                     case "rock":
-                        roundResultDisplay.textContent = "You Lose! Rock beats Scissors!";
+                        roundResult.textContent = "You Lose!";
+                        roundResultReason.textContent = "Rock beats Scissors!";
                         roundResultDisplay.classList.remove("success");
                         roundResultDisplay.classList.add("failure");
                         return -1;
                     case "paper":
-                        roundResultDisplay.textContent = "You Win! Scissors beat Paper!";
+                        roundResult.textContent = "You Win!";
+                        roundResultReason.textContent = "Scissors beat Paper!";
                         roundResultDisplay.classList.remove("failure");
                         roundResultDisplay.classList.add("success");
                         return 1;
@@ -163,7 +174,8 @@ function playRound(playerChoice) {
 }
 
 function newGame() {
-    roundResultDisplay.textContent = "New Game Started!";
+    roundResult.textContent = "New Game Started!";
+    roundResultReason.textContent = "";
     playerScoreDisplay.textContent = 0;
     cpuScoreDisplay.textContent = 0;
     playerChoiceDisplay.src = './assets/default.svg';
@@ -173,3 +185,4 @@ function newGame() {
 
     roundResultDisplay.classList.remove("failure", "success");
 }
+newGame()

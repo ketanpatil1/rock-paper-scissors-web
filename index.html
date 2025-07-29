@@ -9,24 +9,24 @@
     </head>
 
     <body>
-        <header>
+        <header class="surface">
             <div class="spacer"></div>
             <h1>Rock, Paper & Scissors!</h1>
             <button class="help-btn">?</button>
         </header>
 
         <div class="score-area">
-            <div class="player-card">
+            <div class="player-card surface">
                 <p>You</p>
                 <div class="player-score score"></div>
             </div>
-            <div class="cpu-card">
+            <div class="cpu-card surface">
                 <p>CPU</p>
                 <div class="cpu-score score"></div>
             </div>
         </div>
 
-        <div class="round-container">
+        <div class="round-container surface">
             <div class="round-display">
                 <div class="player-choice">
                     <p class="player-label">You</p>
@@ -37,17 +37,17 @@
                     <img class="cpu-choice-icon" src="./assets/default.svg" alt="No choice made yet">
                 </div>
             </div>
-            <div class="round-result">New Game Started!</div>
+            <div class="round-result"></div>
         </div>
 
         <div class="options-container">
-            <button id="rock" class="option">
+            <button id="rock" class="option surface">
                 <img src="./assets/rock.svg" alt="rock">
             </button>
-            <button id="paper" class="option">
+            <button id="paper" class="option surface">
                 <img src="./assets/paper.svg" alt="paper">
             </button>
-            <button id="scissors" class="option">
+            <button id="scissors" class="option surface">
                 <img src="./assets/scissors.svg" alt="scissors">
             </button>
         </div>

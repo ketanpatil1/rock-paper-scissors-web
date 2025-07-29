@@ -9,33 +9,40 @@ body {
     margin: auto;
     padding: 16px;
     height: 100svh;
-    max-width: 800px;
+    max-width: 500px;
     display: flex;
     flex-direction: column;
     gap: 16px;
+    background: linear-gradient(-220.55deg, #aea5ef 0%, #6f30ef 100%);
+    justify-content: center;
+}
+
+.surface {
+    background-color: rgba(255, 255, 255, 1);
 }
 
 header {
-    margin-bottom: 48px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 16px;
+    padding: 24px;
 }
 h1 {
     text-align: center;
-    font-size: 28px;
+    font-size: 32px;
     flex-grow: 1;
 }
 .spacer,
 .help-btn {
     aspect-ratio: 1;
-    height: 32px;
+    height: 42px;
 }
 .help-btn {
     background-color: transparent;
     border: 1px solid lightgray;
     border-radius: 50%;
-    font-size: 18px;
+    font-size: 28px;
 }
 
 button {
@@ -47,13 +54,17 @@ button {
 .score-area {
     display: flex;
     justify-content: space-around;
+    border-radius: 16px;
+    gap: 16px;
 }
 
 .player-card,
 .cpu-card {
     width: 140px;
-    padding: 4px;
+    padding: 24px;
     text-align: center;
+    border-radius: 16px;
+    flex-grow: 1;
 }
 .player-card p,
 .cpu-card p {
@@ -71,11 +82,13 @@ button {
 }
 
 .round-container {
-    flex-grow: 3;
+    /* flex-grow: 1; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 16px;
+    border-radius: 16px;
+    padding: 24px;
 }
 
 .round-display {
@@ -109,11 +122,12 @@ button {
 .options-container {
     display: flex;
     justify-content: space-between;
+    align-items: stretch;
+    gap: 16px;
 }
 
 .option {
-    border-radius: 24px;
-    width: 32%;
+    border-radius: 16px;
     aspect-ratio: 1;
     overflow: hidden;
 
@@ -121,6 +135,7 @@ button {
     justify-content: center;
     align-items: center;
     font-size: 64px;
+    flex-grow: 1;
 }
 
 .round-display img,
