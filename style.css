@@ -42,6 +42,19 @@ body {
     border: 2px solid lightgray;
     border-radius: 16px;
 }
+.help-btn:hover,
+.option:hover {
+    background-color: rgba(210, 190, 255, 1);
+}
+.help-btn:active,
+.option:active,
+.option.active {
+    background-color: rgba(150, 120, 230, 1);
+}
+.help-btn,
+.option {
+    transition: background-color 200ms;
+}
 
 header {
     display: flex;

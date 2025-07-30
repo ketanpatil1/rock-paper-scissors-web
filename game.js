@@ -92,22 +92,30 @@ for (let option of options) {
 
 document.addEventListener("keypress", (e) => {
     if (!dialog.open) {
+        let button;
         switch (e.key) {
             case "1":
             case "r":
-                options[0].click()
+                button = options[0];
                 break;
             case "2":
             case "p":
-                options[1].click()
+                button = options[1];
                 break;
             case "3":
             case "s":
-                options[2].click()
+                button = options[2];
                 break;
             default:
                 break;
         }
+        button.classList.add("active");
+        button.click();
+    }
+});
+document.addEventListener("keyup", (e) => {
+    for (const option of options) {
+        option.classList.remove("active");
     }
 });
 
