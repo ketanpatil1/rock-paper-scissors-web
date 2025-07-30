@@ -1,39 +1,6 @@
 let cpuScore = 0;
 let playerScore = 0;
 
-const dialog = document.querySelector('dialog');
-dialog.showModal();
-dialog.addEventListener("click", (e) => {
-    if (e.target === dialog) {
-        dialog.close();
-    }
-});
-const closeModalButton = document.querySelector('dialog button');
-closeModalButton.addEventListener("click", () => {
-    dialog.close();
-});
-const helpBtn = document.querySelector('.help-btn');
-helpBtn.addEventListener("click", () => {
-    dialog.showModal();
-});
-
-
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-}
-
-function getCpuChoice() {
-    cpuChoice = getRandomInt(3);
-    switch (cpuChoice) {
-        case 0:
-            return "rock";
-        case 1:
-            return "paper";
-        case 2:
-            return "scissors";
-    }
-}
-
 const playerScoreDisplay = document.querySelector(".player-score");
 const cpuScoreDisplay = document.querySelector(".cpu-score");
 playerScoreDisplay.textContent = playerScore;
@@ -47,6 +14,20 @@ const roundResult = document.createElement("p");
 const roundResultReason = document.createElement("p");
 roundResultDisplay.append(roundResult);
 roundResultDisplay.append(roundResultReason);
+
+function newGame() {
+    roundResult.textContent = "New Game Started!";
+    roundResultReason.textContent = "";
+    playerScoreDisplay.textContent = 0;
+    cpuScoreDisplay.textContent = 0;
+    playerChoiceDisplay.src = './assets/default.svg';
+    playerChoiceDisplay.alt = 'No choice made yet';
+    cpuChoiceDisplay.src = './assets/default.svg';
+    cpuChoiceDisplay.alt = 'No choice made yet';
+
+    roundResultDisplay.classList.remove("failure", "success");
+}
+newGame()
 
 const options = document.querySelectorAll(".option");
 for (let option of options) {
@@ -90,38 +71,26 @@ for (let option of options) {
     });
 };
 
-document.addEventListener("keypress", (e) => {
-    if (!dialog.open) {
-        let button;
-        switch (e.key) {
-            case "1":
-            case "r":
-                button = options[0];
-                break;
-            case "2":
-            case "p":
-                button = options[1];
-                break;
-            case "3":
-            case "s":
-                button = options[2];
-                break;
-            case "?":
-                button = helpBtn;
-                break;
-            default:
-                break;
-        }
-        button.classList.add("active");
-        button.click();
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
+
+function getCpuChoice() {
+    cpuChoice = getRandomInt(3);
+    switch (cpuChoice) {
+        case 0:
+            return "rock";
+        case 1:
+            return "paper";
+        case 2:
+            return "scissors";
     }
-});
-document.addEventListener("keyup", (e) => {
-    for (const option of options) {
-        option.classList.remove("active");
-    }
-    helpBtn.classList.remove("active");
-});
+}
+
+function playRound(playerChoice) {
+    cpuChoice = getCpuChoice();
+    return getResult(playerChoice, cpuChoice);
+}
 
 function getResult(playerChoice, cpuChoice) {
     if (playerChoice === cpuChoice) {
@@ -180,21 +149,51 @@ function getResult(playerChoice, cpuChoice) {
     }
 }
 
-function playRound(playerChoice) {
-    cpuChoice = getCpuChoice();
-    return getResult(playerChoice, cpuChoice);
-}
+const dialog = document.querySelector('dialog');
+dialog.showModal();
+dialog.addEventListener("click", (e) => {
+    if (e.target === dialog) {
+        dialog.close();
+    }
+});
+const closeModalButton = document.querySelector('dialog button');
+closeModalButton.addEventListener("click", () => {
+    dialog.close();
+});
+const helpBtn = document.querySelector('.help-btn');
+helpBtn.addEventListener("click", () => {
+    dialog.showModal();
+});
 
-function newGame() {
-    roundResult.textContent = "New Game Started!";
-    roundResultReason.textContent = "";
-    playerScoreDisplay.textContent = 0;
-    cpuScoreDisplay.textContent = 0;
-    playerChoiceDisplay.src = './assets/default.svg';
-    playerChoiceDisplay.alt = 'No choice made yet';
-    cpuChoiceDisplay.src = './assets/default.svg';
-    cpuChoiceDisplay.alt = 'No choice made yet';
-
-    roundResultDisplay.classList.remove("failure", "success");
-}
-newGame()
+document.addEventListener("keypress", (e) => {
+    if (!dialog.open) {
+        let button;
+        switch (e.key) {
+            case "1":
+            case "r":
+                button = options[0];
+                break;
+            case "2":
+            case "p":
+                button = options[1];
+                break;
+            case "3":
+            case "s":
+                button = options[2];
+                break;
+            case "?":
+                button = helpBtn;
+                break;
+            default:
+                break;
+        }
+        button.classList.add("active");
+        button.click();
+    }
+});
+document.addEventListener("keyup", (e) => {
+    for (const option of options) {
+        option.classList.remove("active");
+    }
+    helpBtn.classList.remove("active");
+});
