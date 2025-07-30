@@ -106,6 +106,9 @@ document.addEventListener("keypress", (e) => {
             case "s":
                 button = options[2];
                 break;
+            case "?":
+                button = helpBtn;
+                break;
             default:
                 break;
         }
@@ -117,6 +120,7 @@ document.addEventListener("keyup", (e) => {
     for (const option of options) {
         option.classList.remove("active");
     }
+    helpBtn.classList.remove("active");
 });
 
 function getResult(playerChoice, cpuChoice) {

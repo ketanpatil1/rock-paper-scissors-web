@@ -47,6 +47,7 @@ body {
     background-color: rgba(210, 190, 255, 1);
 }
 .help-btn:active,
+.help-btn.active,
 .option:active,
 .option.active {
     background-color: rgba(150, 120, 230, 1);
