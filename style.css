@@ -42,9 +42,11 @@ body {
     border: 2px solid lightgray;
     border-radius: 16px;
 }
-.help-btn:hover,
-.option:hover {
-    background-color: rgba(210, 190, 255, 1);
+@media (hover: hover) {
+    .help-btn:hover,
+    .option:hover {
+        background-color: rgba(210, 190, 255, 1);
+    }
 }
 .help-btn:active,
 .help-btn.active,
@@ -238,8 +240,10 @@ dialog div {
     padding: 8px 16px;
     transition: background-color 200ms;
 }
-.new-btn:hover {
-    background-color: #8e55ef;
+@media (hover: hover) {
+    .new-btn:hover {
+        background-color: #8e55ef;
+    }
 }
 .new-btn:active {
     background-color: #aea5ef;
