@@ -1,21 +1,21 @@
 /* funnel-display-latin-wght-normal */
 @font-face {
-  font-family: 'Funnel Display Variable';
-  font-style: normal;
-  font-display: swap;
-  font-weight: 300 800;
-  src: url(https://cdn.jsdelivr.net/fontsource/fonts/funnel-display:vf@latest/latin-wght-normal.woff2) format('woff2-variations');
-  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+    font-family: 'Funnel Display Variable';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 300 800;
+    src: url(https://cdn.jsdelivr.net/fontsource/fonts/funnel-display:vf@latest/latin-wght-normal.woff2) format('woff2-variations');
+    unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }
 
 /* azeret-mono-latin-wght-normal */
 @font-face {
-  font-family: 'Azeret Mono Variable';
-  font-style: normal;
-  font-display: swap;
-  font-weight: 100 900;
-  src: url(https://cdn.jsdelivr.net/fontsource/fonts/azeret-mono:vf@latest/latin-wght-normal.woff2) format('woff2-variations');
-  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+    font-family: 'Azeret Mono Variable';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 100 900;
+    src: url(https://cdn.jsdelivr.net/fontsource/fonts/azeret-mono:vf@latest/latin-wght-normal.woff2) format('woff2-variations');
+    unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }
 
 *, *::before, *::after {
@@ -183,14 +183,16 @@ dialog::backdrop {
 dialog {
     margin: auto;
     font-size: 18px;
+    width: 450px;
+    max-width: 90vw;
 }
-dialog button {
+.close-btn {
     position: absolute;
     right: 24px;
     top: 24px;
     display: block;
 }
-dialog button img {
+.close-btn img {
     height: 20px;
     padding: 0;
 }
@@ -220,6 +222,27 @@ dialog img {
 dialog div {
     margin-top: 24px;
     text-align: center;
+}
+
+.game-over-dialog section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+.new-btn {
+    background-color: #6f30ef;
+    color: white;
+    font-size: 18px;
+    border-radius: 12px;
+    padding: 8px 16px;
+    transition: background-color 200ms;
+}
+.new-btn:hover {
+    background-color: #8e55ef;
+}
+.new-btn:active {
+    background-color: #aea5ef;
 }
 
 kbd:not(:has(kbd)) {

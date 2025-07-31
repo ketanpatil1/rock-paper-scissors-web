@@ -57,16 +57,13 @@ for (let option of options) {
         cpuScoreDisplay.textContent = cpuScore;
 
         if (playerScore >= 5) {
-            if (cpuScore >= 5) {
-                alert("It's a tie!");
-                newGame();
-            } else {
-                alert("You Win!");
-                newGame();
-            }
+            gameOverDialog.showModal();
+            gameResult.textContent = "You Won!";
+            newGameButton.textContent = "Play Again!";
         } else if (cpuScore >= 5) {
-            alert("You Lose!");
-            newGame();
+            gameOverDialog.showModal();
+            gameResult.textContent = "You Lose!";
+            newGameButton.textContent = "Try Again!";
         }
     });
 };
@@ -149,24 +146,37 @@ function getResult(playerChoice, cpuChoice) {
     }
 }
 
-const dialog = document.querySelector('dialog');
-dialog.showModal();
-dialog.addEventListener("click", (e) => {
-    if (e.target === dialog) {
-        dialog.close();
+const helpDialog = document.querySelector('.help-dialog');
+helpDialog.showModal();
+helpDialog.addEventListener("click", (e) => {
+    if (e.target === helpDialog) {
+        helpDialog.close();
     }
 });
-const closeModalButton = document.querySelector('dialog button');
-closeModalButton.addEventListener("click", () => {
-    dialog.close();
+const gameOverDialog = document.querySelector('.game-over-dialog');
+const gameResult = document.querySelector('.result');
+const newGameButton = document.querySelector('.new-btn');
+newGameButton.addEventListener("click", () => {
+    newGame();
+    gameOverDialog.close();
+});
+
+const closeModalButtons = document.querySelectorAll('.close-btn');
+for (const button of closeModalButtons) {
+    button.addEventListener("click", () => {
+        button.parentElement.close();
+    });
+}
+closeModalButtons[0].addEventListener("click", () => {
+    closeModalButtons[0].parentElement.close();
 });
 const helpBtn = document.querySelector('.help-btn');
 helpBtn.addEventListener("click", () => {
-    dialog.showModal();
+    helpDialog.showModal();
 });
 
 document.addEventListener("keypress", (e) => {
-    if (!dialog.open) {
+    if (!helpDialog.open && !gameOverDialog.open) {
         let button;
         switch (e.key) {
             case "1":
