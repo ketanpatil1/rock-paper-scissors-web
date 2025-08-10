@@ -154,6 +154,11 @@ helpDialog.addEventListener("click", (e) => {
     }
 });
 const gameOverDialog = document.querySelector('.game-over-dialog');
+gameOverDialog.addEventListener("click", (e) => {
+    if (e.target === gameOverDialog) {
+        gameOverDialog.close();
+    }
+});
 const gameResult = document.querySelector('.result');
 const newGameButton = document.querySelector('.new-btn');
 newGameButton.addEventListener("click", () => {
